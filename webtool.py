@@ -13,7 +13,7 @@ st.caption("Apri il menu a tendina per inserire i dati")
 
 st.sidebar.title("Compila i campi")
 val_immobile=st.sidebar.number_input("Inserire il valore dell'immobile",value=100000,step=1000)
-perc_mutuo_raw=st.sidebar.number_input("Inserire la percentuale del valore dell'immobile su cui verrà erogato il mutuo",min_value=0,max_value=100,value=80,step=1)
+perc_mutuo_raw=st.sidebar.number_input("Inserire la percentuale del valore dell'immobile di cui verrà erogato il mutuo",min_value=0,max_value=100,value=80,step=1)
 tax_raw = st.sidebar.number_input("Inserire tasso fisso",value=2.5,step=0.01)
 anni = st.sidebar.number_input("Inserire durata del mutuo in anni", value=10,step=1)
 amm = st.sidebar.selectbox("Seleziona piano di ammortamento",("Francese","Italiano"))
@@ -82,11 +82,11 @@ with column2:
 st.header("Andamento quote rispetto alla rata")
 st.plotly_chart(fig)
 
-hide_style="""
-        <style>
-        MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_style, unsafe_allow_html=True)
+#hide_style="""
+ #       <style>
+  #      MainMenu {visibility: hidden;}
+   #     footer {visibility: hidden;}
+    #    header {visibility: hidden;}
+     #   </style>
+      #  """
+#st.markdown(hide_style, unsafe_allow_html=True)
