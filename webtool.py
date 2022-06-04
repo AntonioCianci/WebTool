@@ -76,7 +76,8 @@ with column2:
     st.write("Quota capitale: ",cap_tot,"€")
     st.write("Quota anticipata: ",ant,"€")
     st.write("Totale esborso: ",tot_esb,"€")
-    st.write("Rata mensile: ",rata[0],"€")
+    st.write("Prima Rata mensile: ",rata[0],"€")
+    st.write("Ultima Rata mensile: ",rata[-1],"€")
 
 st.header("Andamento quote rispetto alla rata")
 st.plotly_chart(fig)
