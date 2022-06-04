@@ -64,7 +64,7 @@ fig=px.line(data_frame=df,x=month,y=[q_cap,q_int,rata],
             labels={"x":"Mesi","value":"€"},
 )
 newnames = {'wide_variable_0':'Quota Interessi','wide_variable_1':'Quota Capitale','wide_variable_2':'Rata'}
-fig.for_each_trace(lambda t: t.update(name = newnames[t.name]))
+fig.for_each_trace(lambda t: t.update(name = newnames[t.name],legendgroup = newnames[t.name],hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
 
 column1,column2=st.columns(2)
 with column1:
@@ -80,3 +80,12 @@ with column2:
 
 st.header("Andamento quote rispetto alla rata")
 st.plotly_chart(fig)
+
+hide_style="""
+        <style>
+        MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_style, unsafe_allow_html=True)
