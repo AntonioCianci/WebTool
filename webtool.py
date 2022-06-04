@@ -63,7 +63,7 @@ df = pd.DataFrame(tab)
 fig=px.line(data_frame=df,x=month,y=[q_cap,q_int,rata],
             labels={"x":"Mesi","value":"€"},
 )
-newnames = {'wide_variable_0':'Quota Interessi','wide_variable_1':'Quota Capitale','wide_variable_2':'Rata'}
+newnames = {'wide_variable_0':'Quota Capitale','wide_variable_1':'Quota Interessi','wide_variable_2':'Rata'}
 fig.for_each_trace(lambda t: t.update(name = newnames[t.name],legendgroup = newnames[t.name],hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
 
 column1,column2=st.columns(2)
