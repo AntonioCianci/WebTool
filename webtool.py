@@ -79,12 +79,3 @@ with column2:
 
 st.header("Andamento quote rispetto alla rata")
 st.plotly_chart(fig)
-
-hide_style="""
-        <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_style, unsafe_allow_html=True)
