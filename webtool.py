@@ -12,10 +12,10 @@ st.title("Informazioni Mutuo")
 st.caption("Apri il menu a tendina per inserire i dati")
 
 st.sidebar.title("Compila i campi")
-val_immobile=st.sidebar.number_input("Inserire il valore dell'immobile",value=100000,step=1000)
-perc_mutuo_raw=st.sidebar.number_input("Inserire la percentuale del valore dell'immobile di cui verrà erogato il mutuo",min_value=0,max_value=100,value=80,step=1)
-tax_raw = st.sidebar.number_input("Inserire tasso fisso",value=2.5,step=0.01)
-anni = st.sidebar.number_input("Inserire durata del mutuo in anni", value=10,step=1)
+val_immobile=st.sidebar.number_input("Inserire il valore dell'immobile (€)",value=100000,step=1000)
+perc_mutuo_raw=st.sidebar.slider("- Inserire percentuale sul valore dell'immobile (%) -",min_value=0,max_value=100,value=50,step=1)
+tax_raw = st.sidebar.number_input("Inserire tasso fisso (%)",value=2.5,step=0.01)
+anni = st.sidebar.number_input("Inserire durata del mutuo (Anni)", value=10,step=1)
 amm = st.sidebar.selectbox("Seleziona piano di ammortamento",("Francese","Italiano"))
 
 mesi = anni * 12
@@ -54,10 +54,10 @@ tot_esb = tot_inter + int(ant)
 
 tab = {
     "Mese":month,
-    "Quota capitale":q_cap,
-    "Quota interessi":q_int,
-    "Capitale residuo":cap_res[1:],
-    "Rata":rata
+    "Quota capitale (€)":q_cap,
+    "Quota interessi (€)":q_int,
+    "Capitale residuo (€)":cap_res[1:],
+    "Rata (€)":rata
 }
 df = pd.DataFrame(tab)
 fig=px.line(data_frame=df,x=month,y=[q_cap,q_int,rata],
