@@ -41,7 +41,7 @@ for i in range(0,mesi):
         q_cap.append(rata[i] - q_int[i])
         cap_res.append(cap_res[i] - q_cap[i])
         tot_int = tot_int + q_int[i] 
-    elif amm == "Italiana":
+    elif amm == "Italiano":
         q_int.append(cap_res[i] * tax/12)
         q_cap.append(cap_tot / mesi)
         rata.append(q_int[i] + q_cap[i])
