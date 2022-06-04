@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 st.title("Informazioni Mutuo")
-st.subheader("Apri il menu a tendina (sulla sinistra) per inserire i dati")
+st.caption("Apri il menu a tendina per inserire i dati")
 
 st.sidebar.title("Compila i campi")
 val_immobile=st.sidebar.number_input("Inserire il valore dell'immobile",value=100000,step=1000)
