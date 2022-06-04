@@ -16,7 +16,7 @@ val_immobile=st.sidebar.number_input("Inserire il valore dell'immobile",value=10
 perc_mutuo_raw=st.sidebar.number_input("Inserire la percentuale del valore dell'immobile su cui verrà erogato il mutuo",min_value=0,max_value=100,value=80,step=1)
 tax_raw = st.sidebar.number_input("Inserire tasso fisso",value=2.5,step=0.01)
 anni = st.sidebar.number_input("Inserire durata del mutuo in anni", value=10,step=1)
-amm = st.sidebar.selectbox("Seleziona piano di ammortamento",("Francese","Italiana"))
+amm = st.sidebar.selectbox("Seleziona piano di ammortamento",("Francese","Italiano"))
 
 mesi = anni * 12
 tax = tax_raw/100
