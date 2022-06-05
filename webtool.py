@@ -60,8 +60,10 @@ tab = {
     "Rata (€)":rata
 }
 df = pd.DataFrame(tab)
-fig=px.line(data_frame=df,x=month,y=[q_cap,q_int,rata],
-            labels={"x":"Mesi","value":"€"},
+df.set_index(df["Mese"],inplace=True)
+df=df[["Quota capitale (€)","Quota interessi (€)","Capitale residuo (€)","Rata (€)"]]
+fig=px.line(data_frame=df,x=df.index,y=[q_cap,q_int,rata],
+            labels={"index":"Mesi","value":"€"},
 )
 newnames = {'wide_variable_0':'Quota Capitale','wide_variable_1':'Quota Interessi','wide_variable_2':'Rata'}
 fig.for_each_trace(lambda t: t.update(name = newnames[t.name],legendgroup = newnames[t.name],hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
