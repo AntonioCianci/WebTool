@@ -91,4 +91,4 @@ hide_style="""
         header {visibility: hidden;}
         </style>
         """
-st.markdown(hide_style, unsafe_allow_html=True)
+#st.markdown(hide_style, unsafe_allow_html=True)
